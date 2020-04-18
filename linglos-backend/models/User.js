@@ -23,7 +23,9 @@ const UserSchema = new Schema({
     passwordResetToken: {
         type:String,
         required: false
-    }
+    },
+    studentAppointments: [String],
+    teacherAppointments: [String],
 });
 
 UserSchema.methods.setPasswordResetToken = function( done){

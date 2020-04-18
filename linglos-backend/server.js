@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 
 const users = require('./routes/api/users');
+const booking = require('./routes/api/bookings');
 
 require('dotenv').config();
 
@@ -33,9 +34,10 @@ connection.once('open', () => {
 
 // const exercisesRouter = require('./routes/exercises');
 // const usersRouter = require('./routes/users');
-
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/users', users);
-// app.use('/users', usersRouter);
+app.use('/api/booking', booking);
 
 
 
